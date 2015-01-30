@@ -2,6 +2,7 @@
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
+
     // Main
     initHeader();
     initAnimation();
@@ -153,7 +154,8 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
+            ctx.strokeStyle = 'rgba(255,125,0,'+ p.active+')';
+            ctx.lineWidth = 5; 
             ctx.stroke();
         }
     }
@@ -171,8 +173,8 @@
         this.draw = function() {
             if(!_this.active) return;
             ctx.beginPath();
-            ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'rgba(156,217,249,'+ _this.active+')';
+            ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 5 * Math.PI, false);
+            ctx.fillStyle = 'rgba(255,125,0,'+ _this.active+')';
             ctx.fill();
         };
     }
